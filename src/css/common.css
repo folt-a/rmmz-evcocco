@@ -1,0 +1,144 @@
+@font-face {
+  font-family: RocknRollOne-Regular;
+  src: url(RocknRollOne-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: ReggaeOne-Regular;
+  src: url(ReggaeOne-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: KleeOne-Regular;
+  src: url(KleeOne-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: KleeOne-SemiBold;
+  src: url(KleeOne-SemiBold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: mplus-1m-regular;
+  src: url(mplus-1m-regular.ttf) format("truetype");
+}
+
+html,
+body,
+input,
+a {
+  font-family: 'RocknRollOne-Regular';
+  font-weight: normal !important;
+}
+
+button,
+.fa-layers-text,
+.panel-heading {
+  font-family: 'RocknRollOne-Regular';
+  font-weight: normal !important;
+}
+
+input,
+textarea {
+  font-family: 'mplus-1m-regular';
+}
+
+.label {
+  font-weight: normal;
+}
+
+
+/*  */
+
+.is-small.input,
+.is-small.textarea {
+  font-size: 0.9rem !important;
+  height: 2em !important;
+  /* padding: 1px !important; */
+  padding-bottom: calc(0.3em - 1px) !important;
+  padding-left: calc(0.7em - 1px) !important;
+  padding-right: calc(0.7em - 1px) !important;
+  padding-top: calc(0.3em - 1px) !important;
+}
+
+
+/*  */
+
+.d-flex {
+  display: flex;
+}
+
+.d-inline-b {
+  display: inline-block;
+}
+
+.no-shadow {
+  box-shadow: 0 0;
+}
+
+.u-is-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.u-is-ver-center {
+  display: flex;
+  align-items: center;
+}
+
+.u-is-ver-bottom {
+  display: flex;
+  align-items: flex-start;
+}
+
+.u-b {
+  border: solid 1px;
+  background-color: white;
+}
+
+.u-ml-35 {
+  margin-left: 35px;
+}
+
+.u-w100 {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.u-h100 {
+  height: 100%;
+}
+
+.is-10px {
+  width: 10px;
+}
+
+.is-20px {
+  width: 20px;
+}
+
+.is-30px {
+  width: 30px;
+}
+
+.is-40px {
+  width: 40px;
+}
+
+.is-100px {
+  width: 100px;
+}
+
+.is-h-50px {
+  height: 50px;
+}
+
+.u-bg-transparent {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
+.u-transparent {
+  opacity: 0;
+}

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rmmzevcocco</title>
+
+  <link rel="stylesheet" href="../css/lib/bulma.css" />
+  <link rel="stylesheet" href="../css/common.css" />
+  <link rel="stylesheet" href="../css/menu.css" />
+
+
+  <script src="../js/lib/all.min.js" data-autoReplaceSvg="true"></script>
+  <script src="../js/lib/i18next.min.js"></script>
+
+  <script src="../js/import.js" defer></script>
+  <script src="../js/initi18n.js" defer></script>
+  <script src="../js/data/mzMenus.js" defer></script>
+  <script src="../js/menu.js" defer></script>
+
+  <style>
+    body {
+      overflow-x: hidden;
+      overflow-y: hidden;
+    }
+
+    ::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container u-is-center">
+    <div class="buttons has-addons is-center">
+      <button class="button p-5" style="-webkit-app-region: drag">
+        <span class="icon">
+          <i class="fas fa-arrows-alt fa-2x fa-fw" style="color: #363636"></i>
+        </span>
+      </button>
+      <button id="event" class="button px-4 py-5 is-hidden">
+        <span class="icon">
+          <i class="fas fa-book-heart fa-2x fa-fw" style="color: #99c703"></i>
+        </span>
+        <span class="pl-1">Event</span>
+      </button>
+      <button id="eventMenu" class="button px-4 py-5 is-hidden">
+        <span class="icon">
+          <i class="fas fa-bars fa-2x fa-fw" style="color: #00b4e0"></i>
+        </span>
+        <span class="pl-1">EventMenu</span>
+      </button>
+      <button id="scenario" class="button px-4 py-5 is-hidden">
+        <span class="icon">
+          <i class="fas fa-book-heart fa-2x fa-fw" style="color: #03c724"></i>
+        </span>
+        <span class="pl-1">Event</span>
+      </button>
+      <button id="variables" class="button px-4 py-5 is-hidden">
+        <span class="icon">
+          <i class="fas fa-database fa-2x fa-fw" style="color: #8d9510"></i>
+        </span>
+        <span class="pl-1">Variables</span>
+      </button>
+      <button id="convert" class="button px-4 py-5">
+        <span class="icon">
+          <i class="fas fa-table fa-2x fa-fw" style="color: #4ba55a"></i>
+        </span>
+        <span class="pl-1" data-i18n="convert">Convert</span>
+      </button>
+      <button id="minimize" class="button px-5 py-5">
+        <span class="fa-layers-text fa-2x fa-fw" style="color: #363636; font-weight: bold">－</span>
+      </button>
+      <button id="bringFront" class="button px-5 py-5">
+        <span id="bringFrontIcon" class="icon">
+          <i class="fas fa-external-link-alt fa-2x fa-fw"></i>
+        </span>
+      </button>
+      <button id="close" class="button px-5 py-5">
+        <span class="icon">
+          <i class="fas fa-times fa-2x fa-fw" style="color: #363636"></i>
+        </span>
+      </button>
+    </div>
+  </div>
+</body>
+
+</html>

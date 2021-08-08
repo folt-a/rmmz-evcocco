@@ -1,0 +1,1397 @@
+[
+  {
+    "name": [
+      "show text",
+      "文章の表示",
+      "text",
+      ""
+    ],
+    "code": 101,
+    "default": [
+      "",
+      0,
+      0,
+      2,
+      2,
+      ""
+    ]
+  },
+  {
+    "name": [],
+    "code": 401,
+    "parameters": [
+      ""
+    ]
+  },
+  {
+    "name": [
+      "show choices",
+      "選択肢の表示",
+      "choices"
+    ],
+    "code": 102,
+    "default": [
+      [
+        "はい",
+        "いいえ"
+      ],
+      1,
+      0,
+      2,
+      0
+    ],
+    "isIndentIncrementNext": true
+  },
+  {
+    "name": [
+      "when",
+      "選択肢値のとき",
+      "のとき",
+      "とき"
+    ],
+    "code": 402,
+    "default": [
+      0,
+      "はい"
+    ],
+    "isIndentDecrementSelf": true
+  },
+  {
+    "name": [
+      "when cancel",
+      "キャンセルのとき"
+    ],
+    "code": 403,
+    "default": [
+      6,
+      null
+    ],
+    "isIndentDecrementSelf": true
+  },
+  {
+    "name": [
+      "when end",
+      "選択肢分岐終了"
+    ],
+    "code": 404,
+    "default": [],
+    "isIndentDecrementNext": true,
+    "isIndentDecrementSelf": true
+  },
+  {
+    "name": [
+      "input number",
+      "数値入力の処理",
+      "number"
+    ],
+    "code": 103,
+    "default": [
+      1,
+      1
+    ]
+  },
+  {
+    "name": [
+      "select item",
+      "アイテム選択の処理"
+    ],
+    "code": 104,
+    "default": [
+      1,
+      2
+    ]
+  },
+  {
+    "name": [
+      "scroll text",
+      "文章のスクロール表示",
+      "scroll"
+    ],
+    "code": 105,
+    "default": [
+      2,
+      false
+    ]
+  },
+  {
+    "name": [
+      "comment",
+      "注釈",
+      "cmt",
+      "cm",
+      "コメント",
+      "memo",
+      "メモ",
+      "こめんと"
+    ],
+    "code": 108,
+    "default": [
+      ""
+    ]
+  },
+  {
+    "name": [
+      "branch",
+      "条件分岐",
+      "if"
+    ],
+    "code": 111,
+    "default": [
+      0,
+      1,
+      0
+    ],
+    "isIndentIncrementNext": true
+  },
+  {
+    "name": [
+      "else",
+      "条件分岐以外のとき",
+      "以外のとき"
+    ],
+    "code": 411,
+    "default": [],
+    "isIndentDecrementSelf": true
+  },
+  {
+    "name": [
+      "end if",
+      "条件分岐終了"
+    ],
+    "code": 412,
+    "default": [],
+    "isIndentDecrementNext": true,
+    "isIndentDecrementSelf": true
+  },
+  {
+    "name": [
+      "loop",
+      "ループ"
+    ],
+    "code": 112,
+    "default": [],
+    "isIndentIncrementNext": true
+  },
+  {
+    "name": [
+      "repeat above",
+      "以上繰り返しループ"
+    ],
+    "code": 413,
+    "default": [],
+    "isIndentDecrementNext": true,
+    "isIndentDecrementSelf": true
+  },
+  {
+    "name": [
+      "break loop",
+      "ループの中断"
+    ],
+    "code": 113,
+    "default": []
+  },
+  {
+    "name": [
+      "exit event",
+      "イベント中断"
+    ],
+    "code": 115,
+    "default": []
+  },
+  {
+    "name": [
+      "common event",
+      "コモンイベント",
+      "common"
+    ],
+    "code": 117,
+    "default": [
+      1
+    ]
+  },
+  {
+    "name": [
+      "label",
+      "ラベル"
+    ],
+    "code": 118,
+    "default": [
+      ""
+    ]
+  },
+  {
+    "name": [
+      "jump label",
+      "ラベルジャンプ",
+      "jump",
+      "ジャンプ"
+    ],
+    "code": 119,
+    "default": [
+      ""
+    ]
+  },
+  {
+    "name": [
+      "switch",
+      "スイッチの操作"
+    ],
+    "code": 121,
+    "default": [
+      1,
+      1,
+      0
+    ]
+  },
+  {
+    "name": [
+      "variables",
+      "変数"
+    ],
+    "code": 122,
+    "default": [
+      1,
+      1,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": [
+      "self switch",
+      "セルフスイッチ"
+    ],
+    "code": 123,
+    "default": [
+      "A",
+      0
+    ]
+  },
+  {
+    "name": [
+      "timer",
+      "タイマー"
+    ],
+    "code": 124,
+    "default": [
+      0,
+      0
+    ]
+  },
+  {
+    "name": [
+      "change gold",
+      "所持金の増減"
+    ],
+    "code": 125,
+    "default": [
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "name": [
+      "change item",
+      "アイテムの増減"
+    ],
+    "code": 126,
+    "default": [
+      1,
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "name": [
+      "change weapons",
+      "武器の増減"
+    ],
+    "code": 127,
+    "default": [
+      1,
+      0,
+      0,
+      1,
+      false
+    ]
+  },
+  {
+    "name": [
+      "change armors",
+      "防具の増減"
+    ],
+    "code": 128,
+    "default": [
+      1,
+      0,
+      0,
+      1,
+      false
+    ]
+  },
+  {
+    "name": [
+      "change party member",
+      "メンバーの入れ替え",
+      "メンバーの入替え",
+      "メンバー入れ替え",
+      "メンバー入替え"
+    ],
+    "code": 129,
+    "default": [
+      1,
+      0,
+      false
+    ]
+  },
+  {
+    "name": [
+      "change battle bgm",
+      "戦闘BGMの変更",
+      "戦闘BGMの変更"
+    ],
+    "code": 132,
+    "default": [],
+    "soundParamIndex": 0
+  },
+  {
+    "name": [
+      "change victory me",
+      "勝利MEの変更",
+      "勝利ME変更"
+    ],
+    "code": 133,
+    "default": [],
+    "soundParamIndex": 0
+  },
+  {
+    "name": [
+      "change save access",
+      "セーブ禁止の変更"
+    ],
+    "code": 134,
+    "default": [
+      0
+    ]
+  },
+  {
+    "name": [
+      "change menu access",
+      "メニュー禁止の変更"
+    ],
+    "code": 135,
+    "default": [
+      0
+    ]
+  },
+  {
+    "name": [
+      "change encounter",
+      "エンカウント禁止の変更"
+    ],
+    "code": 136,
+    "default": [
+      0
+    ]
+  },
+  {
+    "name": [
+      "change formation access",
+      "並び替え禁止の変更"
+    ],
+    "code": 137,
+    "default": [
+      0
+    ]
+  },
+  {
+    "name": [
+      "change window color",
+      "ウィンドウカラーの変更"
+    ],
+    "code": 138,
+    "default": [
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": [
+      "change defeat me",
+      "敗北MEの変更"
+    ],
+    "code": 139,
+    "default": [],
+    "soundParamIndex": 0
+  },
+  {
+    "name": [
+      "change vehicle bgm",
+      "乗り物BGMの変更"
+    ],
+    "code": 140,
+    "default": [
+      0
+    ],
+    "soundParamIndex": 1
+  },
+  {
+    "name": [
+      "transfer player",
+      "場所移動",
+      "move"
+    ],
+    "code": 201,
+    "default": [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": [
+      "set vehicle location",
+      "乗り物の位置設定"
+    ],
+    "code": 202,
+    "default": [
+      0,
+      0,
+      1,
+      0,
+      0
+    ]
+  },
+  {
+    "name": [
+      "set event location",
+      "イベントの位置設定"
+    ],
+    "code": 203,
+    "default": [
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": [
+      "scroll map",
+      "マップのスクロール"
+    ],
+    "code": 204,
+    "default": [
+      2,
+      1,
+      4,
+      false
+    ]
+  },
+  {
+    "name": [
+      "set movement route",
+      "移動ルートの設定"
+    ],
+    "code": 205,
+    "default": [
+      -1,
+      {
+        "list": [
+          {
+            "code": 0
+          }
+        ],
+        "repeat": false,
+        "skippable": false,
+        "wait": true
+      }
+    ]
+  },
+  {
+    "name": [
+      "get on/off vehicle",
+      "乗り物の乗降"
+    ],
+    "code": 206,
+    "default": []
+  },
+  {
+    "name": [
+      "change transparency",
+      "透明状態の変更"
+    ],
+    "code": 211,
+    "default": [
+      0
+    ]
+  },
+  {
+    "name": [
+      "show animation",
+      "アニメーションの表示"
+    ],
+    "code": 212,
+    "default": [
+      -1,
+      1,
+      false
+    ]
+  },
+  {
+    "name": [
+      "show balloon icon",
+      "フキダシアイコンの表示"
+    ],
+    "code": 213,
+    "default": [
+      -1,
+      1,
+      false
+    ]
+  },
+  {
+    "name": [
+      "erase event",
+      "イベントの一時消去"
+    ],
+    "code": 214,
+    "default": []
+  },
+  {
+    "name": [
+      "change player followers",
+      "隊列歩行の変更"
+    ],
+    "code": 216,
+    "default": [
+      0
+    ]
+  },
+  {
+    "name": [
+      "gather followers",
+      "隊列メンバーの集合"
+    ],
+    "code": 217,
+    "default": [
+      0
+    ]
+  },
+  {
+    "name": [
+      "fadeout screen",
+      "画面のフェードアウト",
+      "フェードアウト"
+    ],
+    "code": 221,
+    "default": []
+  },
+  {
+    "name": [
+      "fadein screen",
+      "画面のフェードイン",
+      "フェードイン"
+    ],
+    "code": 222,
+    "default": []
+  },
+  {
+    "name": [
+      "tint screen",
+      "画面の色調変更"
+    ],
+    "code": 223,
+    "default": [
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      60,
+      true
+    ]
+  },
+  {
+    "name": [
+      "flash screen",
+      "画面のフラッシュ"
+    ],
+    "code": 224,
+    "default": [
+      [
+        255,
+        255,
+        255,
+        170
+      ],
+      60,
+      true
+    ]
+  },
+  {
+    "name": [
+      "shake screen",
+      "画面のシェイク"
+    ],
+    "code": 225,
+    "default": [
+      5,
+      5,
+      60,
+      true
+    ]
+  },
+  {
+    "name": [
+      "wait",
+      "ウェイト"
+    ],
+    "code": 230,
+    "default": [
+      60
+    ]
+  },
+  {
+    "name": [
+      "show picture",
+      "ピクチャの表示",
+      "picture",
+      "showpic"
+    ],
+    "code": 231,
+    "default": [
+      1,
+      "",
+      0,
+      0,
+      0,
+      0,
+      100,
+      100,
+      255,
+      0,
+      0
+    ]
+  },
+  {
+    "name": [
+      "move picture",
+      "ピクチャの移動",
+      "movepic",
+      "mvpic"
+    ],
+    "code": 232,
+    "default": [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      100,
+      100,
+      255,
+      0,
+      60,
+      true,
+      0
+    ]
+  },
+  {
+    "name": [
+      "rotate picture",
+      "ピクチャの回転",
+      "rotatepic",
+      "rotpic"
+    ],
+    "code": 233,
+    "default": [
+      1,
+      0
+    ]
+  },
+  {
+    "name": [
+      "tint picture",
+      "ピクチャの色調変更"
+    ],
+    "code": 234,
+    "default": [
+      1,
+      [
+        0,
+        0,
+        0,
+        0
+      ],
+      60,
+      true
+    ]
+  },
+  {
+    "name": [
+      "erase picture",
+      "ピクチャの消去",
+      "ピクチャの削除",
+      "deletepicture",
+      "delpicture"
+    ],
+    "code": 235,
+    "default": [
+      1
+    ]
+  },
+  {
+    "name": [
+      "set weather effect",
+      "天候の設定"
+    ],
+    "code": 236,
+    "default": [
+      "none",
+      5,
+      60,
+      true
+    ]
+  },
+  {
+    "name": [
+      "play bgm",
+      "BGMの演奏",
+      "BGMの再生",
+      "BGM再生",
+      "BGM演奏",
+      "bgm",
+      "play bgm"
+    ],
+    "code": 241,
+    "default": [],
+    "soundParamIndex": 0
+  },
+  {
+    "name": [
+      "fadeout bgm",
+      "BGMのフェードアウト"
+    ],
+    "code": 242,
+    "default": [
+      10
+    ]
+  },
+  {
+    "name": [
+      "save bgm",
+      "BGMの保存"
+    ],
+    "code": 243,
+    "default": []
+  },
+  {
+    "name": [
+      "resume bgm",
+      "BGMの再開"
+    ],
+    "code": 244,
+    "default": []
+  },
+  {
+    "name": [
+      "play bgs",
+      "BGSの演奏"
+    ],
+    "code": 245,
+    "default": [],
+    "soundParamIndex": 0
+  },
+  {
+    "name": [
+      "fadeout bgs",
+      "BGSのフェードアウト"
+    ],
+    "code": 246,
+    "default": [
+      10
+    ]
+  },
+  {
+    "name": [
+      "play me",
+      "MEの演奏"
+    ],
+    "code": 249,
+    "default": [],
+    "soundParamIndex": true
+  },
+  {
+    "name": [
+      "play se",
+      "SEの演奏"
+    ],
+    "code": 250,
+    "default": [],
+    "soundParamIndex": 0
+  },
+  {
+    "name": [
+      "stop se",
+      "SEの停止"
+    ],
+    "code": 251,
+    "default": []
+  },
+  {
+    "name": [
+      "play movie",
+      "ムービーの再生"
+    ],
+    "code": 261,
+    "default": []
+  },
+  {
+    "name": [
+      "change map name display",
+      "マップ名表示の変更"
+    ],
+    "code": 281,
+    "default": [
+      0
+    ]
+  },
+  {
+    "name": [
+      "change tileset",
+      "タイルセットの変更"
+    ],
+    "code": 282,
+    "default": [
+      1
+    ]
+  },
+  {
+    "name": [
+      "change battle background",
+      "戦闘背景の変更"
+    ],
+    "code": 283,
+    "default": [
+      "",
+      ""
+    ]
+  },
+  {
+    "name": [
+      "change parallax",
+      "遠景の変更"
+    ],
+    "code": 284,
+    "default": [
+      "",
+      false,
+      false,
+      0,
+      0
+    ]
+  },
+  {
+    "name": [
+      "get location info",
+      "指定位置の情報取得"
+    ],
+    "code": 285,
+    "default": [
+      1,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "name": [
+      "battle processing",
+      "戦闘の処理"
+    ],
+    "code": 301,
+    "default": [
+      0,
+      1,
+      false,
+      false
+    ],
+    "isIndentIncrementNext": true
+  },
+  {
+    "name": [
+      "if win",
+      "勝ったとき"
+    ],
+    "code": 601,
+    "default": [],
+    "isIndentDecrementSelf": true
+  },
+  {
+    "name": [
+      "if escape",
+      "逃げたとき"
+    ],
+    "code": 602,
+    "default": [],
+    "isIndentDecrementSelf": true
+  },
+  {
+    "name": [
+      "if lose",
+      "負けたとき"
+    ],
+    "code": 603,
+    "default": [],
+    "isIndentDecrementSelf": true
+  },
+  {
+    "name": [
+      "end battle",
+      "戦闘分岐終了"
+    ],
+    "code": 604,
+    "default": [],
+    "isIndentDecrementNext": true,
+    "isIndentDecrementSelf": true
+  },
+  {
+    "name": [
+      "shop processing",
+      "ショップの処理"
+    ],
+    "code": 302,
+    "default": [
+      0,
+      0,
+      0,
+      0,
+      false
+    ]
+  },
+  {
+    "name": [
+      "name input processing",
+      "名前入力の処理"
+    ],
+    "code": 303,
+    "default": [
+      1,
+      8
+    ]
+  },
+  {
+    "name": [
+      "change hp",
+      "HPの増減"
+    ],
+    "code": 311,
+    "default": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      false
+    ]
+  },
+  {
+    "name": [
+      "change mp",
+      "MPの増減"
+    ],
+    "code": 312,
+    "default": [
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "name": [
+      "change tp",
+      "TPの増減"
+    ],
+    "code": 326,
+    "default": [
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "name": [
+      "change state",
+      "ステートの変更"
+    ],
+    "code": 313,
+    "default": [
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "name": [
+      "recover all",
+      "全回復"
+    ],
+    "code": 314,
+    "default": [
+      0,
+      0
+    ]
+  },
+  {
+    "name": [
+      "change exp",
+      "経験値の増減"
+    ],
+    "code": 315,
+    "default": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      false
+    ]
+  },
+  {
+    "name": [
+      "change level",
+      "レベルの増減"
+    ],
+    "code": 316,
+    "default": [
+      0,
+      0,
+      0,
+      0,
+      1,
+      false
+    ]
+  },
+  {
+    "name": [
+      "change parameter",
+      "能力値の増減"
+    ],
+    "code": 317,
+    "default": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "name": [
+      "change skill",
+      "スキルの増減"
+    ],
+    "code": 318,
+    "default": [
+      0,
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "name": [
+      "change equipment",
+      "装備の変更"
+    ],
+    "code": 319,
+    "default": [
+      1,
+      1,
+      0
+    ]
+  },
+  {
+    "name": [
+      "change name",
+      "名前の変更"
+    ],
+    "code": 320,
+    "default": [
+      1,
+      ""
+    ]
+  },
+  {
+    "name": [
+      "change class",
+      "職業の変更"
+    ],
+    "code": 321,
+    "default": [
+      1,
+      1,
+      false
+    ]
+  },
+  {
+    "name": [
+      "change actor images",
+      "アクターの画像変更"
+    ],
+    "code": 322,
+    "default": [
+      1,
+      "",
+      1,
+      "",
+      1,
+      ""
+    ]
+  },
+  {
+    "name": [
+      "change vehicle image",
+      "乗り物の画像変更"
+    ],
+    "code": 323,
+    "default": [
+      0,
+      "",
+      0
+    ]
+  },
+  {
+    "name": [
+      "change nickname",
+      "二つ名の変更"
+    ],
+    "code": 324,
+    "default": [
+      1,
+      ""
+    ]
+  },
+  {
+    "name": [
+      "change profile",
+      "プロフィールの変更"
+    ],
+    "code": 325,
+    "default": [
+      1,
+      ""
+    ]
+  },
+  {
+    "name": [
+      "change enemy hp",
+      "敵キャラのHP増減"
+    ],
+    "code": 331,
+    "default": [
+      -1,
+      0,
+      0,
+      1,
+      false
+    ]
+  },
+  {
+    "name": [
+      "change enemy mp",
+      "敵キャラのMP増減"
+    ],
+    "code": 332,
+    "default": [
+      -1,
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "name": [
+      "change enemy tp",
+      "敵キャラのTP増減"
+    ],
+    "code": 342,
+    "default": [
+      -1,
+      0,
+      0,
+      1
+    ]
+  },
+  {
+    "name": [
+      "change enemy state",
+      "敵キャラのステート変更"
+    ],
+    "code": 333,
+    "default": [
+      -1,
+      0,
+      1
+    ]
+  },
+  {
+    "name": [
+      "enemy recover all",
+      "敵キャラの全回復"
+    ],
+    "code": 334,
+    "default": [
+      -1
+    ]
+  },
+  {
+    "name": [
+      "enemy appear",
+      "敵キャラの出現"
+    ],
+    "code": 335,
+    "default": [
+      0
+    ]
+  },
+  {
+    "name": [
+      "enemy transform",
+      "敵キャラの変身"
+    ],
+    "code": 336,
+    "default": [
+      0,
+      1
+    ]
+  },
+  {
+    "name": [
+      "show battle animation",
+      "戦闘アニメーションの表示"
+    ],
+    "code": 337,
+    "default": [
+      -1,
+      1
+    ]
+  },
+  {
+    "name": [
+      "force action",
+      "戦闘行動の強制"
+    ],
+    "code": 339,
+    "default": [
+      0,
+      0,
+      1,
+      -2
+    ]
+  },
+  {
+    "name": [
+      "abort battle",
+      "バトルの中断"
+    ],
+    "code": 340,
+    "default": []
+  },
+  {
+    "name": [
+      "open menu screen",
+      "メニュー画面を開く"
+    ],
+    "code": 351,
+    "default": []
+  },
+  {
+    "name": [
+      "open save screen",
+      "セーブ画面を開く"
+    ],
+    "code": 352,
+    "default": []
+  },
+  {
+    "name": [
+      "game over",
+      "ゲームオーバー"
+    ],
+    "code": 353,
+    "default": []
+  },
+  {
+    "name": [
+      "return to title screen",
+      "タイトル画面に戻す"
+    ],
+    "code": 354,
+    "default": []
+  },
+  {
+    "name": [
+      "script",
+      "スクリプト"
+    ],
+    "code": 355,
+    "default": [
+      ""
+    ]
+  },
+  {
+    "name": [
+      "deprecated plugin command mv",
+      "非推奨 プラグインコマンド(MV)"
+    ],
+    "code": 356,
+    "default": []
+  },
+  {
+    "name": [
+      "plugin command",
+      "プラグインコマンド"
+    ],
+    "code": 357,
+    "default": []
+  },
+  {
+    "name": [
+      "macro",
+      "マクロ"
+    ],
+    "code": -9,
+    "default": [
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null,
+      null
+    ]
+  }
+]

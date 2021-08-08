@@ -1,0 +1,20 @@
+{
+    "data": "Data",
+    "nothing": "なし",
+    "importdatafromxlsx": "<i class=\"fas fa-cube fa-lg fa-fw mr-3\" style=\"color: #ffd324;\"></i>Import Data from<i class=\"fas fa-file-excel fa-lg fa-fw mx-2\" style=\"color: #4ba55a;\"></i>Xlsx",
+    "dropaxlsxfile": "Drop a .xlsx file",
+    "exportclipboardfromdata": "<i class=\"fas fa-clipboard fa-lg fa-fw mr-3\" style=\"color: rgb(137,60,217);\"></i>Export Clipboard from<i class=\"fas fa-cube fa-lg fa-fw mx-2\" style=\"color: #ffd324;\"></i>Data",
+    "tormmzcommands": "",
+    "tormmzeventpage": "aaaa",
+    "tormmzevent": "aaaa",
+    "totablerows": "aaaa",
+    "importdatafromclipboard": "<i class=\"fas fa-cube fa-lg fa-fw mr-3\" style=\"color: #ffd324;\" data-i18n=\"importdatafromclipboard\"></i>Import Datafrom<i class=\"fas fa-clipboard fa-lg fa-fw mx-2\" style=\"color: rgb(137,60,217);\"></i>Clipboard",
+    "clipboard": "aaaa",
+    "fromrmmzcommands": "aaaa",
+    "fromtablerows": "aaaa",
+    "errnotfoundcmd": "ERROR id${{id}}: type={{type}}に前方一致するコマンド名がありません。<br>commands.jsonを確認してください。<br>",
+    "errnotfoundmacro": "ERROR id${{id}}: type={{type}}の name({{name}}) はマクロにないか、名前が間違っています<br>",
+    "errrequire": "ERROR id${{id}}: type={{type}}の arg{{argnum}}({{name}}) は必須です<br>",
+    "errloadsheet": "ERROR シートを読み込めませんでした<br>",
+    "loadedsheet": "loaded sheet."
+}

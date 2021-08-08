@@ -1,0 +1,20 @@
+{
+    "convert": "コマンド変換",
+    "data": "データ",
+    "nothing": "なし",
+    "importdatafromxlsx": "<i class=\"fas fa-file-excel fa-lg fa-fw mx-1\" style=\"color: #4ba55a;\"></i>Xlsxを読み込んで<i class=\"fas fa-cube fa-lg fa-fw mx-1\" style=\"color: #ffd324;\"></i>データを上書き",
+    "dropaxlsxfile": "Drop a .xlsx file",
+    "exportclipboardfromdata": "<i class=\"fas fa-cube fa-lg fa-fw mx-1\" style=\"color: #ffd324;\"></i>データを<i class=\"fas fa-clipboard fa-lg fa-fw mx-1\" style=\"color: rgb(137,60,217);\"></i>クリップボードに出力",
+    "tormmzcommands": "MZコマンドをコピー",
+    "tormmzeventpage": "MZイベントページをコピー",
+    "tormmzevent": "MZコマンドをコピー",
+    "totablerows": "セル行をコピー",
+    "importdatafromclipboard": "<i class=\"fas fa-clipboard fa-lg fa-fw mx-1\" style=\"color: rgb(137,60,217);\"></i>クリップボードから<i class=\"fas fa-cube fa-lg fa-fw mx-1\" style=\"color: #ffd324;\"></i>データを上書き",
+    "fromrmmzcommands": "MZコマンドから読み込む",
+    "fromtablerows": "セル行から読み込む",
+    "errnotfoundcmd": "id${{id}}: type={{type}}に前方一致コマンド名がありません。<br>commands.jsonを確認してください。<br>",
+    "errnotfoundmacro": "id${{id}}: type={{type}}の name({{name}}) はマクロにないか、名前が間違っています<br>",
+    "errrequire": "id${{id}}: type={{type}}の arg{{argnum}}({{name}}) は必須です<br>",
+    "errloadsheet": "シートを読み込めませんでした<br>",
+    "loadedsheet": "シートを読み込みました。"
+}

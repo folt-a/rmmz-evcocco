@@ -1,0 +1,48 @@
+#drop {
+    border: 2px dashed rgb(153, 225, 243);
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    padding: 25px;
+    text-align: center;
+    font: 20pt bold, "Vollkorn";
+    color: #bbb
+}
+
+a {
+    text-decoration: none
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.u-height100 {
+    height: 100%;
+}
+
+
+.panel-heading{
+    background-color: #eeeeee !important;
+    padding-left: 12px;
+}
+
+#message{
+    padding-left: 12px;
+}
+
+.button{
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-left: 24px !important;
+}
+
+
+.rmmz{
+    border-radius: 6px;
+    border: 2px solid rgb(50, 152, 220);
+    width: 1.2em;
+    height: 1.2em;
+    background-color: #fff;
+}

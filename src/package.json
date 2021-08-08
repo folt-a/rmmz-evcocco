@@ -1,0 +1,9 @@
+{
+  "main": "main.js",
+  "devDependencies": {
+    "xlsx": "^0.16.9",
+    "electron-store": "^8.0.0",
+    "iconv-lite": "^0.6.3",
+    "csv-string": "^4.0.1"
+  }
+}

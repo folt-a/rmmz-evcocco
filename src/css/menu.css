@@ -1,0 +1,21 @@
+html {
+  height: 100%;
+  background-color: transparent;
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  background-color: transparent;
+}
+
+button {
+  background-color: #fff;
+}
+
+#bringFrontIcon {
+  color: #363636;
+}
+#bringFrontIcon.enabled {
+  color: #5f9ad1;
+}
