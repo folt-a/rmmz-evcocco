@@ -1,6 +1,6 @@
 {
     "name": "rmmz-evcocco",
-    "version": "1.0.0",
+    "version": "0.8.0",
     "description": "",
     "main": "./src/main.js",
     "scripts": {

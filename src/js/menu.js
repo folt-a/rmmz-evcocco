@@ -57,7 +57,7 @@ document.getElementById('event').addEventListener('click', (e) => {
 document.getElementById('convert').addEventListener('click', (e) => {
   IpcRenderer.send('open_window', {
     options: {
-      width: 470,
+      width: 500,
       height: 700,
       resizable: true,
       maximizable: false,
