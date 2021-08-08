@@ -1,6 +1,6 @@
 {
   "main": "main.js",
-  "devDependencies": {
+  "dependencies": {
     "xlsx": "^0.16.9",
     "electron-store": "^8.0.0",
     "iconv-lite": "^0.6.3",

@@ -8,7 +8,7 @@ let mainWindow;
 
 let Windows = [];
 
-const isOpenDevTools = true;
+const isOpenDevTools = false;
 
 (
     /**
