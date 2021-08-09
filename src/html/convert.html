@@ -29,14 +29,32 @@
     <div class="box p-0 m-0 no-shadow">
         <nav class="panel p-0 m-0 no-shadow">
 
-            <div id="dataInfoPanel" class="panel-block" style="min-height: 1.5em;">
-                <p class="panel-heading u-w100 has-background-white-bis u-is-ver-center">
+            <div id="dataInfoPanel" class="panel-block pb-0" style="min-height: 1.5em;">
+                <p class="panel-heading pb-0 pt-1 pr-1 u-w100 has-background-white-bis u-is-ver-center">
                     <i class="fas fa-cube fa-lg fa-fw mr-3" style="color: #ffd324;"></i>
                     <span data-i18n="data"></span>:
-                    <span id="dataInfo" class="control ml-2" style="font-size: 1em; font-weight: bold;"
-                        data-i18n="nothing">nothing</span>
+                    <span id="dataInfo" class="control ml-2 u-is-ver-center"
+                        style="font-size: .9em; height: 44px; font-weight: bold;" data-i18n="nothing">nothing</span>
                     <span id="dataSubInfo" class="control ml-2 u-is-ver-bottom"
-                        style="height: 2em; font-size: .8em;"></span>
+                        style="height: 2em; font-size: .65em;max-width: 140px; margin-left: auto!important;"></span>
+                </p>
+            </div>
+            <div id="clipInfoPanel" class="panel-block py-0" style="min-height: 32px;">
+                <p class="panel-heading pt-1 pb-2 u-w100 has-background-white-bis u-is-ver-center">
+                    <i class="fas fa-clipboard fa-lg fa-fw mr-3" style="color: rgb(137,60,217);"></i>
+                    <span id="dataInfo" class="control" style="font-size: .9em;" data-i18n="clipInfo"></span>:
+                    <span id="clipInfoRmmz" class="fa-layers fa-fw fa-lg ml-2 rmmz is-hidden" data-clip-info
+                        style="height: 28px;">
+                        <span class="fa-layers-text" style="color: rgb(25, 117, 178); font-weight: bold"
+                            data-fa-transform="shrink-8">MZ</span>
+                    </span>
+                    <i id="clipInfoTable" class="fas fa-table fa-lg fa-fw ml-2 is-hidden" data-clip-info
+                        style="color: #4ba55a; height: 28px;"></i>
+                    <i id="clipInfoAnything" class="fas fa-question-circle fa-lg fa-fw ml-2 is-hidden" data-clip-info
+                        style="color: #b6b6b6; height: 28px;"></i>
+                    <span class="fa-layers fa-fw fa-lg mr-3" data-clip-info>
+                        <span class="fa-layers-text" style="color: transparent;" data-fa-transform="shrink-8">MZ</span>
+                    </span>
                 </p>
             </div>
 
@@ -44,7 +62,7 @@
                 <p id="message" class="control" style="min-height: 1.5em;"></p>
             </div>
 
-            <div id="dropPanel" class="panel-block u-w100 no-shadow">
+            <div id="dropPanel" class="panel-block pb-0 u-w100 no-shadow">
                 <div class="panel u-w100">
                     <p class="panel-heading u-w100 has-background-white-bis u-is-ver-center"
                         data-i18n="importdatafromxlsx">
@@ -61,7 +79,40 @@
                 </div>
             </div>
 
-            <div class="panel-block pb-0 no-shadow">
+            <div class="panel-block no-shadow mt-2">
+                <div class="panel u-w100">
+                    <p class="panel-heading u-w100 u-is-ver-center" data-i18n="importdatafromclipboard">
+                        <i class="fas fa-cube fa-lg fa-fw mr-3" style="color: #ffd324;"></i>
+                        Import Data
+                        from
+                        <i class="fas fa-clipboard fa-lg fa-fw mx-2" style="color: rgb(137,60,217);"></i>
+                        Clipboard
+                    </p>
+                    <p class="control u-w100">
+                        <button id="importRMMZCommandsBtn" class="button px-2 py-5 is-fullwidth is-outlined is-info"
+                            style="font-size: 1.2em;">
+                            <span class="fa-layers fa-fw fa-lg mr-3 rmmz">
+                                <span class="fa-layers-text" style="color: rgb(25, 117, 178); font-weight: bold"
+                                    data-fa-transform="shrink-8">MZ</span>
+                            </span>
+                            <!-- <i class="fas fa-align-justify fa-lg fa-fw mr-3" style="color: #c69940;"></i> -->
+                            <i class="fas fa-table fa-lg fa-fw mr-3" style="color: #4ba55a;"></i>
+                            <!-- <span data-i18n="fromrmmzcommands">from RMMZ Commands</span> -->
+                            <span data-i18n="import">import!</span>
+                        </button>
+                    </p>
+                    <!-- <p class="control u-w100">
+                        <button id="importTableRowsBtn" class="button px-2 py-5 is-fullwidth is-outlined is-success"
+                            style="font-size: 1.2em;">
+                            <i class="fas fa-table fa-lg fa-fw mr-3" style="color: #4ba55a;"></i>
+                            <i class="fas fa-square fa-lg fa-fw mr-3" style="color: transparent;"></i>
+                            <span data-i18n="fromtablerows">from Table Rows</span>
+                        </button>
+                    </p> -->
+                </div>
+            </div>
+
+            <div class="panel-block pb-0 no-shadow mt-4">
                 <div class="panel u-w100">
                     <p class="panel-heading u-w100 u-is-ver-center" data-i18n="exportclipboardfromdata">
                         <i class="fas fa-clipboard fa-lg fa-fw mr-3" style="color: rgb(137,60,217);"></i>
@@ -105,37 +156,6 @@
                             <i class="fas fa-table fa-lg fa-fw mr-3" style="color: #4ba55a;"></i>
                             <i class="fas fa-square fa-lg fa-fw mr-3" style="color: transparent;"></i>
                             <span data-i18n="totablerows">to Table Rows</span>
-                        </button>
-                    </p>
-                </div>
-            </div>
-
-            <div class="panel-block pb-0 no-shadow">
-                <div class="panel u-w100">
-                    <p class="panel-heading u-w100 u-is-ver-center" data-i18n="importdatafromclipboard">
-                        <i class="fas fa-cube fa-lg fa-fw mr-3" style="color: #ffd324;"></i>
-                        Import Data
-                        from
-                        <i class="fas fa-clipboard fa-lg fa-fw mx-2" style="color: rgb(137,60,217);"></i>
-                        Clipboard
-                    </p>
-                    <p class="control u-w100">
-                        <button id="importRMMZCommandsBtn" class="button px-2 py-5 is-fullwidth is-outlined is-info"
-                            style="font-size: 1.2em;">
-                            <span class="fa-layers fa-fw fa-lg mr-3 rmmz">
-                                <span class="fa-layers-text" style="color: rgb(25, 117, 178); font-weight: bold"
-                                    data-fa-transform="shrink-8">MZ</span>
-                            </span>
-                            <i class="fas fa-align-justify fa-lg fa-fw mr-3" style="color: #c69940;"></i>
-                            <span data-i18n="fromrmmzcommands">from RMMZ Commands</span>
-                        </button>
-                    </p>
-                    <p class="control u-w100">
-                        <button id="importTableRowsBtn" class="button px-2 py-5 is-fullwidth is-outlined is-success"
-                            style="font-size: 1.2em;">
-                            <i class="fas fa-table fa-lg fa-fw mr-3" style="color: #4ba55a;"></i>
-                            <i class="fas fa-square fa-lg fa-fw mr-3" style="color: transparent;"></i>
-                            <span data-i18n="fromtablerows">from Table Rows</span>
                         </button>
                     </p>
                 </div>

@@ -75,3 +75,5 @@ patches/mtime-cache.json
 # my files
 rmmzevcocco-win32-x64/
 rmmzevcocco-macOS-x64/
+*/~$*.xlsx
+*/*.xlsx

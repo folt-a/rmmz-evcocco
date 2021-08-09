@@ -32,6 +32,9 @@ process.once('loaded', () => {
   global.clipboard.writeText = function (str) {
     electron.remote.clipboard.writeText(str);
   };
+  global.clipboard.readText = function () {
+    return electron.remote.clipboard.readText();
+  };
   global.clipboard.readTable = function () {
     const str = electron.remote.clipboard.readText();
     return csvParser.parse(str, '\t', '"');
@@ -44,6 +47,11 @@ process.once('loaded', () => {
     const buffer = electron.remote.clipboard.readBuffer('application/rpgmz-EventCommand');
     return JSON.parse(iconv.decode(buffer, 'utf-8'));
   };
+
+  global.clipboard.availableFormats = function () {
+    return electron.remote.clipboard.clipboard.availableFormats();
+  };
+
 
   global.Browser = {};
   // global.Browser.createWindow = function(options, url) {

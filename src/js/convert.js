@@ -128,20 +128,28 @@ importRMMZCommandsBtn.addEventListener(
   (e) => {
     e.stopPropagation();
     e.preventDefault();
-    importRMMZCommands();
+    const clipType = checkClipboard();
+
+    if (clipType === 0) {
+      importRMMZCommands();
+    } else if (clipType === 1) {
+      importTableRows();
+    } else {
+      showError('読み込めませんでした<br>クリップボードのデータ形式が違います');
+    }
   },
   false
 );
 
-importTableRowsBtn.addEventListener(
-  'click',
-  (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    importTableRows();
-  },
-  false
-);
+// importTableRowsBtn.addEventListener(
+//   'click',
+//   (e) => {
+//     e.stopPropagation();
+//     e.preventDefault();
+//     importTableRows();
+//   },
+//   false
+// );
 
 /**
  *
@@ -237,8 +245,8 @@ async function convSheetToCommands(readJson, macroJsons, jsonName) {
     } else {
       for (let i = 1; i < 11; i++) {
         // パラメータ指定なし
-        if (defaults[i] !== undefined) {
-          convertObj['parameters'].push(row['arg' + i] === undefined ? defaults[i] : row['arg' + i]);
+        if (defaults[i - 1] !== undefined) {
+          convertObj['parameters'].push(row['arg' + i] === undefined ? defaults[i - 1] : row['arg' + i]);
         }
       }
     }
@@ -468,7 +476,17 @@ async function convRMMZToTableRows(jsons) {
   }
 
   for (const array of workArrays) {
-    resultText += array.join('\t') + '\n';
+    for (const value of array) {
+      if (value === undefined) {
+        resultText += "";
+      } else if (typeof value === 'object') {
+        resultText += JSON.stringify(value);
+      } else {
+        resultText += value;
+      }
+      resultText += '\t';
+    }
+    resultText += '\n';
   }
 
   return resultText.trimEnd();
@@ -535,6 +553,7 @@ function exportRmmzCommands() {
   }
   Clipboard.writeCommand(jsons);
   showInfo('コマンドをコピーしました！');
+  updateClipboardInfo();
 }
 
 async function exportTableRows() {
@@ -545,6 +564,7 @@ async function exportTableRows() {
   const str = await convRMMZToTableRows(jsons);
   Clipboard.writeText(str);
   showInfo('セル行をコピーしました！');
+  updateClipboardInfo();
 }
 
 function importRMMZCommands() {
@@ -554,11 +574,11 @@ function importRMMZCommands() {
   } catch (e) {
     showError('コマンドを読み込めませんでした<br>クリップボードの中身にないか、データ形式が違います');
     console.error(e);
-    return;
+    return false;
   }
   if (json.length === 0) {
     showError('コマンドを読み込めませんでした<br>クリップボードの中身にないか、データ形式が違います');
-    return;
+    return false;
   }
 
   const commandsJsons = [];
@@ -598,7 +618,7 @@ async function importTableRows() {
     tmpJson.name = row[2];
     tmpJson.text = row[3];
     for (let i = 1; i < 11; i++) {
-      tmpJson['args' + i] = tmpJson[i + 3];
+      tmpJson['arg' + i] = row[i + 3];
     }
     json.push(tmpJson);
   }
@@ -622,5 +642,62 @@ async function importTableRows() {
 
     document.getElementById('dataInfo').innerHTML = `${commandsCount}行`;
     document.getElementById('dataSubInfo').innerHTML = ``;
+  }
+}
+
+window.addEventListener("focus", function () {
+  updateClipboardInfo();
+});
+window.addEventListener("DOMContentLoaded", function () {
+  setTimeout(() => {
+    updateClipboardInfo();
+  }, 100);
+});
+
+
+function updateClipboardInfo() {
+  const clipboardType = checkClipboard();
+
+  const elms = document.querySelectorAll('[data-clip-info]');
+
+  for (const elm of elms) {
+    elm.classList.add('is-hidden');
+  }
+
+  switch (clipboardType) {
+    case 0:
+      document.getElementById('clipInfoRmmz').classList.remove('is-hidden');
+      break;
+    case 1:
+      document.getElementById('clipInfoTable').classList.remove('is-hidden');
+      break;
+    case 2:
+      document.getElementById('clipInfoAnything').classList.remove('is-hidden');
+      break;
+    case -1:
+      document.getElementById('clipInfoAnything').classList.remove('is-hidden');
+      break;
+  }
+}
+
+/**
+ * 
+ * @returns rmmz=0, table=1,text=2 none=-1
+ */
+function checkClipboard() {
+  try {
+    Clipboard.readCommand();
+    return 0;
+  } catch (error1) {
+    try {
+      const str = Clipboard.readText();
+      if (str.includes('\t')) {
+        return 1;
+      } else {
+        return 2;
+      }
+    } catch (error2) {
+      return -1;
+    }
   }
 }
