@@ -20,6 +20,15 @@ process.once('loaded', () => {
   global.store = new Store();
   // global.store = electron.remote.getGlobal('store');
 
+  global.webFrame = {};
+  global.webFrame.Zoom = function (isZoomIn) {
+    const nowZoomLevel = electron.webFrame.getZoomFactor();
+    const value = isZoomIn ? .2 : -.2;
+    electron.webFrame.setZoomFactor(nowZoomLevel + value);
+  };
+
+
+
   global.clipboard = {};
   global.clipboard.write = function (json) {
     const buffer = iconv.encode(JSON.stringify(json, 'utf-8'), 'utf-8');
@@ -39,12 +48,21 @@ process.once('loaded', () => {
     const str = electron.remote.clipboard.readText();
     return csvParser.parse(str, '\t', '"');
   };
-  global.clipboard.writeCommand = function (json) {
+  global.clipboard.writeMZCommand = function (json) {
     const buffer = iconv.encode(JSON.stringify(json, 'utf-8'), 'utf-8');
     electron.remote.clipboard.writeBuffer('application/rpgmz-EventCommand', buffer);
   };
-  global.clipboard.readCommand = function () {
+  global.clipboard.readMZCommand = function () {
     const buffer = electron.remote.clipboard.readBuffer('application/rpgmz-EventCommand');
+    return JSON.parse(iconv.decode(buffer, 'utf-8'));
+  };
+
+  global.clipboard.writeMVCommand = function (json) {
+    const buffer = iconv.encode(JSON.stringify(json, 'utf-8'), 'utf-8');
+    electron.remote.clipboard.writeBuffer('application/rpgmv-EventCommand', buffer);
+  };
+  global.clipboard.readMVCommand = function () {
+    const buffer = electron.remote.clipboard.readBuffer('application/rpgmv-EventCommand');
     return JSON.parse(iconv.decode(buffer, 'utf-8'));
   };
 
@@ -101,19 +119,25 @@ process.once('loaded', () => {
   };
 
   global.fs = {};
-  global.fs.writeFileSync = function (fileName, outputPath, json) {
-    fs.writeFileSync(path.join(outputPath, fileName + '.json'), JSON.stringify(json), 'utf-8');
-  };
-  global.fs.mkdirSync = function (dirName) {
-    // fs.mkdir(path.join(global.rootPath, dirName));
-    return fs.mkdirSync(dirName);
-  };
+  // global.fs.mkdirSync = function (dirName) {
+  //   // fs.mkdir(path.join(global.rootPath, dirName));
+  //   return fs.mkdirSync(dirName);
+  // };
   global.fs.existsSync = function (dirName) {
     // fs.mkdir(path.join(global.rootPath, dirName));
     return fs.existsSync(dirName);
   };
+  global.fs.writeFileSync = function (fileName, str) {
+    fs.writeFileSync(__dirname + fileName, str);
+  };
   global.fs.readFileSync = function (fileName, options) {
     return fs.readFileSync(__dirname + fileName, options);
+  };
+  global.fs.writeExcludeFileSync = function (fileName, str) {
+    fs.writeFileSync(process.resourcesPath + "\\" + fileName, str);
+  };
+  global.fs.readExcludeFileSync = function (fileName, options) {
+    return fs.readFileSync(process.resourcesPath + "\\" + fileName, options);
   };
 
   global.path = {};

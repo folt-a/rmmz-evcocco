@@ -39,11 +39,17 @@
         "files": [
             "src/**/*"
         ],
+        "extraFiles": [
+            "resources/commandsMV.json",
+            "resources/commandsMZ.json",
+            "resources/sample-xlsx/*.xlsx"
+        ],
         "mac": {
             "category": "folta.rmmzevcocco.category.type"
         },
         "win": {
-            "target": "zip"
+            "target": "zip",
+            "icon": "src/img/icon.png"
         }
     }
 }

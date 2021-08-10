@@ -46,3 +46,18 @@ body {
     height: 1.2em;
     background-color: #fff;
 }
+
+.data{
+    border-radius: 6px;
+    border: 3px solid rgb(220, 203, 50);
+    box-shadow: 0 0.5em 1em -0.125em rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.02);;
+    
+    
+    background-color: #fff;
+}
+
+
+
+.nowrap{
+    white-space: nowrap;
+}

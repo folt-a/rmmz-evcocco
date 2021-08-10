@@ -55,7 +55,6 @@ const exportRmmzEventBtn = document.getElementById('exportRmmzEventBtn');
 const exportTableRowsBtn = document.getElementById('exportTableRowsBtn');
 
 const importRMMZCommandsBtn = document.getElementById('importRMMZCommandsBtn');
-const importTableRowsBtn = document.getElementById('importTableRowsBtn');
 
 window.addEventListener(
   'dragenter',
@@ -132,24 +131,18 @@ importRMMZCommandsBtn.addEventListener(
 
     if (clipType === 0) {
       importRMMZCommands();
+      exportRmmzCommandsBtn.removeAttribute('disabled');
+      exportTableRowsBtn.removeAttribute('disabled');
     } else if (clipType === 1) {
       importTableRows();
+      exportRmmzCommandsBtn.removeAttribute('disabled');
+      exportTableRowsBtn.removeAttribute('disabled');
     } else {
       showError('読み込めませんでした<br>クリップボードのデータ形式が違います');
     }
   },
   false
 );
-
-// importTableRowsBtn.addEventListener(
-//   'click',
-//   (e) => {
-//     e.stopPropagation();
-//     e.preventDefault();
-//     importTableRows();
-//   },
-//   false
-// );
 
 /**
  *
@@ -543,6 +536,8 @@ async function importFromXlsx(wb) {
 
     document.getElementById('dataInfo').innerHTML = `${sheetCount}シート ${commandsCount}行 <br>${macroCount}マクロ`;
     document.getElementById('dataSubInfo').innerHTML = `${LoadedFileName}`;
+    exportRmmzCommandsBtn.removeAttribute('disabled');
+    exportTableRowsBtn.removeAttribute('disabled');
   }
 }
 
@@ -551,7 +546,13 @@ function exportRmmzCommands() {
   for (const sourceJson of SourceJsons) {
     jsons = jsons.concat(sourceJson.jsons);
   }
-  Clipboard.writeCommand(jsons);
+  const isMV = Store.get('config').isMV;
+  if (isMV) {
+    Clipboard.writeMVCommand(jsons);
+  } else {
+    Clipboard.writeMZCommand(jsons);
+  }
+
   showInfo('コマンドをコピーしました！');
   updateClipboardInfo();
 }
@@ -570,7 +571,12 @@ async function exportTableRows() {
 function importRMMZCommands() {
   let json = [];
   try {
-    json = Clipboard.readCommand();
+    const isMV = Store.get('config').isMV;
+    if (isMV) {
+      json = Clipboard.readMVCommand();
+    } else {
+      json = Clipboard.readMZCommand();
+    }
   } catch (e) {
     showError('コマンドを読み込めませんでした<br>クリップボードの中身にないか、データ形式が違います');
     console.error(e);
@@ -667,15 +673,19 @@ function updateClipboardInfo() {
   switch (clipboardType) {
     case 0:
       document.getElementById('clipInfoRmmz').classList.remove('is-hidden');
+      importRMMZCommandsBtn.removeAttribute('disabled');
       break;
     case 1:
       document.getElementById('clipInfoTable').classList.remove('is-hidden');
+      importRMMZCommandsBtn.removeAttribute('disabled');
       break;
     case 2:
       document.getElementById('clipInfoAnything').classList.remove('is-hidden');
+      importRMMZCommandsBtn.setAttribute('disabled', 'disabled');
       break;
     case -1:
       document.getElementById('clipInfoAnything').classList.remove('is-hidden');
+      importRMMZCommandsBtn.setAttribute('disabled', 'disabled');
       break;
   }
 }
@@ -686,7 +696,12 @@ function updateClipboardInfo() {
  */
 function checkClipboard() {
   try {
-    Clipboard.readCommand();
+    const isMV = Store.get('config').isMV;
+    if (isMV) {
+      Clipboard.readMVCommand();
+    } else {
+      Clipboard.readMZCommand();
+    }
     return 0;
   } catch (error1) {
     try {
@@ -701,3 +716,9 @@ function checkClipboard() {
     }
   }
 }
+
+document.addEventListener('wheel', (e) => {
+  if (e.ctrlKey) {
+    WebFrame.Zoom(e.wheelDelta > 0)
+  }
+})

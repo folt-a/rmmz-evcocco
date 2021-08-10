@@ -5,3 +5,4 @@ const Fs = window.fs;
 const Path = window.path;
 const Clipboard = window.clipboard;
 const IpcRenderer = window.ipcRenderer;
+const WebFrame = window.webFrame;
