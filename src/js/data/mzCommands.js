@@ -22,7 +22,12 @@ function getCommandNameJP(commandObj) {
  */
 async function getCodeToCommandObject(code) {
   if (CommandsJson.length === 0) {
-    CommandsJson = JSON.parse(await Fs.readFileSync('\\js\\data\\commands.json', 'utf8'));
+    const isMV = Store.get('config').isMV;
+    if (isMV) {
+      CommandsJson = JSON.parse(await Fs.readFileSync('\\..\\commandsMV.json', 'utf8'));
+    } else {
+      CommandsJson = JSON.parse(await Fs.readFileSync('\\..\\commandsMZ.json', 'utf8'));
+    }
   }
   return CommandsJson.find((i) => i.code === code);
 }
@@ -35,7 +40,12 @@ async function getCodeToCommandObject(code) {
  */
 async function findCodeByCommandTypeName(name) {
   if (CommandsJson.length === 0) {
-    CommandsJson = JSON.parse(await Fs.readFileSync('\\js\\data\\commands.json', 'utf8'));
+    const isMV = Store.get('config').isMV;
+    if (isMV) {
+      CommandsJson = JSON.parse(await Fs.readFileSync('\\..\\commandsMV.json', 'utf8'));
+    } else {
+      CommandsJson = JSON.parse(await Fs.readFileSync('\\..\\commandsMZ.json', 'utf8'));
+    }
   }
   if (name === undefined) return 101;
   console.info(['name', name]);

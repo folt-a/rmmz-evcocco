@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+
+  <link rel="stylesheet" href="../css/lib/bulma.css" />
+  <link href="../css/lib/jsoneditor.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="../css/common.css" />
+  <title>Config</title>
+  <script src="../js/lib/all.min.js"></script>
+  <script src="../js/lib/i18next.min.js"></script>
+  <script src="../js/lib/jsoneditor.min.js"></script>
+
+  <script src="../js/import.js" defer></script>
+  <script src="../js/initi18n.js" defer></script>
+  <script src="../js/storeConfig.js"></script>
+</head>
+
+<body class="has-background-light">
+  <div class="container is-fullwidth mt-0 mb-3">
+    <div class="panel box m-4">
+      <p class="panel-heading" data-i18n="appsettings">
+        アプリの設定（MZ/MV、言語）
+      </p>
+      <div class="panel-block">
+        <div id="config" class="container is-fullwidth m-0 p-0"></div>
+      </div>
+    </div>
+    <div class="panel box m-4">
+      <p class="panel-heading" data-i18n="commandssettingsMZ">コマンドの設定(MZ)</p>
+      <p class="panel-block" data-i18n="commandssettingsdespriction" style="line-height: 1.5em;">
+
+      </p>
+
+      <div class="panel-block">
+        <div id="commandsMZ" class="container is-fullwidth m-0 p-0"></div>
+      </div>
+      <p class="panel-heading" data-i18n="commandssettingsMV">コマンドの設定(MV)</p>
+      <div class="panel-block">
+        <div id="commandsMV" class="container is-fullwidth m-0 p-0"></div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

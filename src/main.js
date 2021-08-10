@@ -1,4 +1,4 @@
-const { app, Menu, BrowserWindow, Tray, ipcMain, MessageChannelMain } = require('electron');
+const { app, Menu, BrowserWindow, Tray, ipcMain, MessageChannelMain, dialog } = require('electron');
 
 const Store = require('electron-store');
 Store.initRenderer();
@@ -18,7 +18,7 @@ const isOpenDevTools = false;
         function createMainMenu() {
             let options = {
                 width: 600,
-                height: 50,
+                height: 150,
                 show: false,
                 frame: false,
                 resizable: false,
@@ -76,6 +76,35 @@ const isOpenDevTools = false;
 
             mainWindow.once('ready-to-show', () => {
                 mainWindow.show();
+
+                if (!store.has('config')) {
+                    var win = mainWindow;
+                    var optionslng = {
+                        type: 'info',
+                        buttons: ['日本語', 'English'],
+                        title: '初回起動確認 Select Language',
+                        message: '言語を選択してください。\nSelect language.',
+                        detail: ''
+                    };
+                    var optionsrm = {
+                        type: 'info',
+                        buttons: ['MZ', 'MV'],
+                        title: '初回起動確認 Select your RPG Maker',
+                        message: 'ツクールのバージョンを選択してください。\nSelect your RPG Maker version.',
+                        detail: ''
+                    };
+
+                    const language = dialog.showMessageBoxSync(win, optionslng);
+                    const isLanguageEnglish = language === 1;
+                    const mvmz = dialog.showMessageBoxSync(win, optionsrm);
+                    const isMV = mvmz === 1;
+                    //初期値
+                    store.set('config', {
+                        isMV: isMV,
+                        isLanguageEnglish: isLanguageEnglish
+                    })
+                    mainWindow.reload()
+                };
             });
         }
 
@@ -107,74 +136,73 @@ const isOpenDevTools = false;
     })();
 
 
-(
-    /**
-     * 設定値初期設定
-     */
-    function storeInit() {
-        //初期値
-        if (store.has('favorites')) {
-            store.set('favorites', [{
-                id: 125,
-                title: '文章の表示',
-                class: 'is-link',
-                mycommands: [{
-                    id: 221,
-                    type: 'text',
-                    maxlength: 10,
-                    name: '名前',
-                    value: 'ゆうしゃ',
-                },
-                {
-                    id: 222,
-                    type: 'textarea',
-                    maxlength: 20,
-                    name: '文章',
-                    rows: 4,
-                    cols: 24,
-                    value: 'ああああああ\nいいいいいい',
-                },
-                ],
-                isListVisible: true,
-            },
-            { id: 126, title: '選択肢の表示', class: 'is-link', isListVisible: true },
-            {
-                id: 127,
-                title: 'スイッチの操作',
-                class: 'is-link',
-                mycommands: [
-                    { id: 224, type: 'code', maxlength: 5, name: '番号', value: '15' },
-                    {
-                        id: 225,
-                        type: 'span',
-                        maxlength: 20,
-                        name: '名前',
-                        value: 'なんとかスイッチ',
-                    },
-                    { id: 226, type: 'checkbox', count: 2, name: '値', value: false },
-                ],
-                isListVisible: true,
-            },
-            {
-                id: 128,
-                title: 'スイッチの操作',
-                class: 'is-link',
-                mycommands: [
-                    { id: 227, type: 'code', maxlength: 5, name: '番号', value: '15' },
-                    {
-                        id: 228,
-                        type: 'span',
-                        maxlength: 20,
-                        name: '名前',
-                        value: 'なんとかスイッチ',
-                    },
-                    { id: 229, type: 'checkbox', count: 2, name: '値', value: true },
-                ],
-                isListVisible: false,
-            },
-            ]);
-        }
-    })();
+// (
+//     /**
+//      * 設定値初期設定
+//      */
+//     function storeInit() {
+//         if (store.has('favorites')) {
+//             store.set('favorites', [{
+//                 id: 125,
+//                 title: '文章の表示',
+//                 class: 'is-link',
+//                 mycommands: [{
+//                     id: 221,
+//                     type: 'text',
+//                     maxlength: 10,
+//                     name: '名前',
+//                     value: 'ゆうしゃ',
+//                 },
+//                 {
+//                     id: 222,
+//                     type: 'textarea',
+//                     maxlength: 20,
+//                     name: '文章',
+//                     rows: 4,
+//                     cols: 24,
+//                     value: 'ああああああ\nいいいいいい',
+//                 },
+//                 ],
+//                 isListVisible: true,
+//             },
+//             { id: 126, title: '選択肢の表示', class: 'is-link', isListVisible: true },
+//             {
+//                 id: 127,
+//                 title: 'スイッチの操作',
+//                 class: 'is-link',
+//                 mycommands: [
+//                     { id: 224, type: 'code', maxlength: 5, name: '番号', value: '15' },
+//                     {
+//                         id: 225,
+//                         type: 'span',
+//                         maxlength: 20,
+//                         name: '名前',
+//                         value: 'なんとかスイッチ',
+//                     },
+//                     { id: 226, type: 'checkbox', count: 2, name: '値', value: false },
+//                 ],
+//                 isListVisible: true,
+//             },
+//             {
+//                 id: 128,
+//                 title: 'スイッチの操作',
+//                 class: 'is-link',
+//                 mycommands: [
+//                     { id: 227, type: 'code', maxlength: 5, name: '番号', value: '15' },
+//                     {
+//                         id: 228,
+//                         type: 'span',
+//                         maxlength: 20,
+//                         name: '名前',
+//                         value: 'なんとかスイッチ',
+//                     },
+//                     { id: 229, type: 'checkbox', count: 2, name: '値', value: true },
+//                 ],
+//                 isListVisible: false,
+//             },
+//             ]);
+//         }
+//     })();
 
 (
     /**
@@ -328,10 +356,10 @@ const isOpenDevTools = false;
     ipcMain.on('open_modalwindow', (event, args) => {
         const calledWindow = Windows[args.options['parent']];
         args.options['parent'] = calledWindow;
-        args.options['x'] = calledWindow.getPosition()[0] + (calledWindow.getSize()[0] / 2);
-        args.options['y'] = calledWindow.getPosition()[1] + (calledWindow.getSize()[1] / 2);
+        // args.options['x'] = calledWindow.getPosition()[0] + (calledWindow.getSize()[0] / 2);
+        // args.options['y'] = calledWindow.getPosition()[1] + (calledWindow.getSize()[1] / 2);
         args.options['modal'] = true;
-        args.options['center'] = false;
+        args.options['center'] = true;
         args.options['webPreferences'] = {
             nodeIntegration: false,
             enableRemoteModule: true,
@@ -348,7 +376,10 @@ const isOpenDevTools = false;
         // subWindow();
         subWindow.loadURL('file://' + __dirname + '/html/' + args.url + '.html');
 
-        // subWindow.webContents.openDevTools();
+        if (isOpenDevTools) {
+            // 開発ツールを有効化
+            subWindow.webContents.openDevTools();
+        }
 
         subWindow.on('closed', () => {
             subWindow = null;

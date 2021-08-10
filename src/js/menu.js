@@ -82,3 +82,25 @@ document.getElementById('scenario').addEventListener('click', (e) => {
     url: 'scenario',
   });
 });
+
+// 設定画面を開く
+document.getElementById('config').addEventListener('click', (e) => {
+  IpcRenderer.send('open_modalwindow', {
+    options: {
+      width: 570,
+      height: 880,
+      resizable: true,
+      maximizable: false,
+      minimizable: false,
+      alwaysOnTop: true,
+      parent: remote.getCurrentWindow().id,
+    },
+    url: 'storeConfig',
+  });
+});
+
+document.addEventListener('wheel', (e) => {
+  if (e.ctrlKey) {
+    WebFrame.Zoom(e.wheelDelta > 0)
+  }
+})
